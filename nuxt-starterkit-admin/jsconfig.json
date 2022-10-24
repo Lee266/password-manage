@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./*"],
+      "@/*": ["./*"],
+      "~~/*": ["./*"],
+      "@@/*": ["./*"]
+    }
+  },
+  "exclude": ["node_modules", ".nuxt", "dist"],
+
+  "vueCompilerOptions": {
+    // This will disable Volar warning on Vue template (if you have volar)
+    "experimentalDisableTemplateSupport": true
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // "phpfmt.exclude": ["PSR2CurlyOpenNextLine"],
+  "files.associations": {
+    "*.csv": "csv (tilde)"
+  },
+  "[php]": {
+    "editor.defaultFormatter": "kokororin.vscode-phpfmt"
+  }
+}

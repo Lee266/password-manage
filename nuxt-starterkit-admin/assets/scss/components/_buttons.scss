@@ -1,0 +1,55 @@
+.back-button {
+  margin-top: rem(32px);
+}
+
+.reset-button {
+  margin-top: rem(26px);
+  box-shadow: $shadow;
+}
+
+.setting-button {
+  flex: 1;
+  padding: 0;
+  width: auto;
+  height: 40px;
+  font-weight: normal;
+  margin: 4px 4px !important;
+  border: 1px solid #3b82f6 !important;
+}
+
+.setting-button.el-button--primary {
+  background-color: #3b82f6 !important;
+}
+
+.setting-button.el-button--text {
+  color: #3b82f6 !important;
+}
+
+.primary-plain-button {
+  color: $edit-button !important;
+  border-color: $edit-button !important;
+  background: $main-background !important;
+  box-shadow: $shadow;
+  &:hover {
+    color: $edit-button !important;
+    opacity: 0.5;
+  }
+}
+
+.danger-plain-button {
+  color: $delete-button !important;
+  border-color: $delete-button !important;
+  background: $main-background !important;
+  box-shadow: $shadow;
+  &:hover {
+    color: $delete-button !important;
+    opacity: 0.5;
+  }
+}
+
+.submit-button {
+  padding: rem(12px 75px);
+  font-size: rem(16px);
+  box-shadow: rem(2px 2px 1px) $shadow;
+  margin-top: rem(67px);
+}

@@ -1,0 +1,35 @@
+.el-form--label-top {
+  .el-input__inner,
+  .el-form-item__label,
+  .el-form-item__content {
+    line-height: 1.6;
+  }
+}
+
+.el-input,
+.el-checkbox,
+.el-form-item__label,
+.el-form-item__content {
+  font-size: rem(14px);
+  color: #030303;
+}
+
+.el-switch__core {
+  &:after {
+    transition: all 0.2s;
+  }
+}
+
+.el-form--label-top {
+  .el-form-item__label {
+    padding: rem(0 0 4px);
+  }
+}
+
+.el-input__inner {
+  height: rem(34px);
+}
+
+.el-tag {
+  border-radius: rem(15px);
+}

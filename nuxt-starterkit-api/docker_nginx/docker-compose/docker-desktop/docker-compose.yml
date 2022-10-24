@@ -1,0 +1,53 @@
+version: '3'
+services:
+    nginx:
+        image: nginx:1.17
+        container_name: api_laravel9_php
+        depends_on: 
+            - php-fpm
+        ports:
+            - 8086:80
+        volumes:
+            - ../../../api_laravel9:/usr/share/nginx/html:cached
+            - ../../nginx/default.conf:/etc/nginx/conf.d/default.conf:cached
+    php-fpm:
+        build: ../../php-fpm
+        container_name: api_laravel9_php-fpm
+        depends_on: 
+            - mysql
+        volumes:
+            - ../../../api_laravel9:/var/www/html:cached
+            - ../../php-fpm/php.ini:/usr/local/etc/php/php.ini:cached
+    mysql:
+        image: mysql:5.7
+        container_name: api_laravel9_mysql
+        platform: linux/amd64
+        environment:
+            MYSQL_DATABASE: db_api_laravel9
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_USER: dev_user
+            MYSQL_PASSWORD: dev_pass
+            TZ: Asia/Tokyo
+        ports:
+            - 3300:3306
+        volumes:
+            - api_laravel9-db-data:/var/lib/mysql:cached
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        environment:
+            - PMA_ARBITRARY=1
+            - PMA_HOST=mysql
+            - PMA_USER=root
+            - PMA_PASSWORD=root
+        container_name: api_laravel9_phpmyadmin
+        links:
+            - mysql
+        ports:
+            - 8087:80
+        volumes:
+            - "../../phpmyadmin/sessions:/sessions"
+    
+volumes:
+    api_laravel9-db-data:
+        driver: local

@@ -1,0 +1,13 @@
+@media only screen and (max-width: 1000px) {
+  .el-form-item--label-top .el-form-item__label {
+    width: auto !important;
+    float: none;
+    display: inline-block;
+    text-align: left;
+    padding: 0 0 10px;
+  }
+
+  .el-form-item--label-top .el-form-item__content {
+    margin-left: 0 !important;
+  }
+}

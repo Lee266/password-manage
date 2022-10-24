@@ -1,0 +1,12 @@
+image: atlassian/default-image:latest
+
+pipelines:
+  branches:
+    develop:
+      - step:
+          caches:
+            - composer
+          script:
+            - apt-get update
+            - apt-get -qq install git-ftp
+            - git ftp push --force --user $FTP_USERNAME_TEST --passwd $FTP_PASSWORD_TEST $FTP_HOST_PATH_TEST -s deploy_test_to_xserver

@@ -1,0 +1,41 @@
+.table-responsive {
+  .el-table__header,
+  .el-table__body {
+    width: auto !important;
+  }
+}
+
+.el-table {
+  box-shadow: rem(3px 3px 1px) #00000029;
+  th {
+    &.el-table__cell {
+      border-bottom: 2px solid #c5c5c5 !important;
+    }
+  }
+}
+
+.el-table thead {
+  font-weight: bold;
+  color: #030303;
+}
+
+.el-table__cell {
+  padding: rem(8px 16px 4px 16px) !important;
+  border: 1px solid #c5c5c5;
+}
+
+.el-table .cell {
+  padding: 0 !important;
+  color: #030303;
+  white-space: nowrap; /*disable line breaks*/
+  overflow: hidden; /*hide overflowing text*/
+  text-overflow: ellipsis; /*display ellipsis "..." to represent clipped text*/
+}
+
+.el-pager li,
+.el-pagination button {
+  width: rem(38px);
+  height: rem(38px);
+  background: #eeeeee;
+  padding-top: rem(5px);
+}

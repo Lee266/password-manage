@@ -1,0 +1,9 @@
+$card-shadow: rem(0 6px 16px 6px) rgba(#475983, 0.05);
+
+.el-card {
+  border-radius: rem(6px);
+
+  &.is-always-shadow {
+    box-shadow: $card-shadow;
+  }
+}

@@ -1,0 +1,24 @@
+image: node:14.17.0
+
+pipelines:
+  branches:
+    develop:
+      - step:
+          name: Yarn build
+          caches:
+            - node
+          script:
+            - node
+            - yarn
+            - cp .env.example .env
+            - yarn build
+      - step:
+          name: Deploy to XServer by FTP (First time)
+          script:
+            - apt-get update
+            - apt-get -qq install git-ftp
+            - git config git-ftp.user $FTP_USERNAME_TEST
+            - git config git-ftp.password $FTP_PASSWORD_TEST
+            - git config git-ftp.url $FTP_HOST_PATH_TEST
+            # - git config git-ftp.syncroot dist/ # .git-ftp-include file is necessary because dist directory is ignored by .gitignore
+            - git ftp push -s deploy_to_xserver
